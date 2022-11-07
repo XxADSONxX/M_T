@@ -1,7 +1,7 @@
-import email
+""" import email
 from pyexpat import model
 from statistics import mode
-from unicodedata import decimal
+from unicodedata import decimal """
 from django.db import models
 
 class professor(models.Model):

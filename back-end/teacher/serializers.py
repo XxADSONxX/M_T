@@ -1,6 +1,3 @@
-from dataclasses import fields
-import email
-from pyexpat import model
 from django.forms import ValidationError
 from rest_framework import serializers
 from teacher.models import professor, Aula
@@ -13,8 +10,8 @@ class ProfessorSerializer(serializers.ModelSerializer):
 
 
 class CadastrarAulaSerializer(serializers.Serializer):
-    email = serializers.EmailField(max_length=255)
     nome = serializers.CharField(max_length=100)
+    email = serializers.EmailField(max_length=255)
 
     def validate_nome(self, value):
         if len(value) < 3:

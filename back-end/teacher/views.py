@@ -1,4 +1,3 @@
-
 from django.shortcuts import get_object_or_404
 from rest_framework.views import APIView
 from rest_framework.views import Response
@@ -32,7 +31,6 @@ class CadastrarAulaAPIView(APIView):
                 Professor=Professor
             )
             Aula.save()
-            """ revisar essa parte """
             aula_serializer = AulaSerializer(aula, many=False)
             return Response(aula_serializer.data, status=HTTP_201_CREATED)
         return Response({"message": "Houveram erros de validação", "errors": serializer.errors}, 
